@@ -2,8 +2,8 @@
 
 ## Tools used in this project
 * Cookiecutter: Data And Code Repository Setup
-* [Poetry](https://towardsdatascience.com/how-to-effortlessly-publish-your-python-package-to-pypi-using-poetry-44b305362f9f): Dependency management
-* [pdoc](https://github.com/pdoc3/pdoc): Automatically create an API documentation for your project
+* Poetry: Dependency management
+* [pdoc](https://github.com/pdoc3/pdoc): Automatically create an API documentation
 
 ## Project structure
 ```bash
@@ -20,10 +20,6 @@
 ├── pyproject.toml                  # dependencies for poetry
 ├── README.md                       # description project
 ├── src                             # store source code
-│   ├── __init__.py                 # make src a Python module 
-│   ├── process.py                  # process data before training model
-│   └── train_model.py              # train model
-└── tests                           # store tests
-    ├── __init__.py                 # make tests a Python module 
-    ├── test_process.py             # test functions for process.py
-    └── test_train_model.py         # test functions for train_model.py
+    ├── __init__.py                 # make src a Python module 
+    ├── process.py                  # process data before training model
+    └── train_model.py              # train model
