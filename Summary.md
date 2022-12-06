@@ -5,15 +5,15 @@
 * Model: MyModel Class contains the proposed model architecture with a stack of Convolution, MaxPool, Convolution and 3-head linear classifier head.
 * Reason: CNN proven to be a baseline approach, hence applied to set a valid benchmark.
 
-##Specifications:
+## Specifications:
 * Device: CPU
 * Run On: 8 GB Mac M1 Chip
 * IDE Used: PyCharm, Colab (for initial experimentation)
 
-##Limitations: 
+## Limitations: 
 * Performance Improvement Scope restricted owing to low number of instances.
 
-##Improvements/Possible Approach:
+## Improvements/Possible Approach:
 1. Transfer learning via a deep-trained model on similar task.
 2. Triplet Loss Learning could be something to explore: the skin diseases seem similar in lot many cases and even instances of herpes are less.
 Therefore, sampling anchor, positive and negative pair batches for similar classes - we can make the model learn to `maximise loss in terms of its difference with other diseases` rather than cross entropy loss which just penalizes the model for wrong classification.
