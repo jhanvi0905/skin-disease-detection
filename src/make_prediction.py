@@ -9,6 +9,7 @@ import torch.nn.functional as F
 
 
 def generate_report(model, test_image_path, batch_size):
+    """Generate Report for given test set """
 
     test_loader, labels = prepare_data_loader(test_image_path, batch_size)
     y_pred_list = []
@@ -25,7 +26,10 @@ def generate_report(model, test_image_path, batch_size):
     print(classification_report(y_targets, y_pred_list))
     print("\nAccuracy: " + str(accuracy_score(y_targets, y_pred_list)))
 
+
 if __name__ == "__main__":
+
+    "Added defaults for batch, data and best model, incase of change specify it using the flag"
     parser = argparse.ArgumentParser()
     parser.add_argument("-bs", '--batch_size', type=int, default=4)
     parser.add_argument("-path", "--data_path", type=str, default='data/raw/')

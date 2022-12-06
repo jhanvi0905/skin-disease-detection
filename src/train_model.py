@@ -8,7 +8,12 @@ import torch.nn.functional as F
 
 
 class MyModel(nn.Module):
+    """
+    The class contaning neural network architecture and its flow of data
+    """
     def __init__(self):
+        """Initialize the model with following layers"""
+
         super(MyModel, self).__init__()
         self.conv1 = torch.nn.Conv2d(in_channels=3, out_channels=16, kernel_size=5, stride=2)
         self.pool = torch.nn.MaxPool2d(kernel_size=2, stride=2)
@@ -16,6 +21,8 @@ class MyModel(nn.Module):
         self.linear = torch.nn.Linear(32 * 31 * 31, 3)
 
     def forward(self, x):
+        """Flow of data from layer to layer"""
+
         x = F.relu(self.conv1(x))
         x = self.pool(x)
         x = F.relu(self.conv2(x))
@@ -24,6 +31,8 @@ class MyModel(nn.Module):
 
 
 def train(model, device, train_loader, optimizer, epoch, display=True):
+    """Train the model for a given epoch"""
+
     model.train()
     for batch_idx, (images, target) in enumerate(train_loader):
         images, target = images.to(device), target.to(device)

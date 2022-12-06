@@ -7,6 +7,8 @@ from torch.utils.data import random_split
 
 
 def load_data(data_path):
+    """ Load Image Dataset and equalize it"""
+
     TRANSFORM_IMG = transforms.Compose([transforms.Resize(256), transforms.CenterCrop(256), transforms.ToTensor(),
                                         transforms.Normalize(mean=[0.485, 0.456, 0.406],
                                                              std=[0.229, 0.224, 0.225])])
@@ -16,6 +18,8 @@ def load_data(data_path):
 
 
 def prepare_data_loader(data_path, batch_size):
+    """Returns Data Loader for given set of images """
+
     dataset = load_data(data_path)
     labels = dataset.targets
 
@@ -23,6 +27,8 @@ def prepare_data_loader(data_path, batch_size):
 
 
 def prepare_train_data(data_path, batch_size, split):
+    """For given data and ratio of split, create random batches, weigh instances based on class length to make dataloaders"""
+
     dataset = load_data(data_path)
     dataset_size = dataset.__len__()
     train_count = int(dataset_size * split)
