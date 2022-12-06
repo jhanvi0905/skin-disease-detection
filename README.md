@@ -40,5 +40,6 @@ python3 -m src.make_predictions -bs batch_size -path data_path -mod model
 
 1. Assumes the image data is in a folder that is specified in path.
 2. Defaults for all flags are set and the best model is added to make predictions by default.
+3. Best performing Model: 256-5-10
 
 
