@@ -29,7 +29,7 @@
 ```
 
 ## 1. Setting Up Environment
-python3 -m pip install requirements.txt
+pip -r install requirements.txt
 
 ## 2. Train the Data  
 python3 -m src.train_model -bs batch_size -lr learning rate -sp split_ratio -ep epochs -path data_path
